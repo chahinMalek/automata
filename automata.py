@@ -405,7 +405,7 @@ class Nfa(Dfa):
 
             index, current_state_index = state_queue.pop(0)
 
-            if string[index] not in self.alphabet:
+            if index < len(string) and string[index] not in self.alphabet:
                 raise ValueError('Symbol is not a part of the alphabet.')
 
             current_state = self.states[current_state_index]

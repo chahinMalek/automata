@@ -1,14 +1,15 @@
-from unittest import TestCase, skip
+from random import randint
+from unittest import TestCase
 from unittest import main
+
+from automata import Alphabet
 from automata import Dfa
 from automata import Nfa
-from automata import Alphabet
-from random import randint
 
 
 def get_random_string() -> str:
 
-    n: int = randint(1, 1000)
+    n: int = randint(10, 1000)
     res: str = ''
 
     for i in range(n):
@@ -21,7 +22,6 @@ def get_alphabet() -> 'Alphabet':
     return Alphabet({'0', '1'})
 
 
-@skip
 class TestDfa(TestCase):
 
     def test_odd_length_dfa(self):
